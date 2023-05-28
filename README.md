@@ -5,7 +5,7 @@
 ---
 <h1 align="center"> :pencil2: Trilhas de Ensino :pushpin: </h1>
 
-> texto texto texto descrição das páginas
+> texto texto texto descrição das páginas #TERMINAR
 
 * Cadastro
 * Acompanhamento do Aprendizado
@@ -21,23 +21,27 @@
 ---
 <h1 align="center"> :computer: Implantação :art: </h1>
 
-A página demonstrativa das funcionalidades da plataforma pode ser acessada por [este link](https://colab.research.google.com/drive/1FZ0Bifm4hx8WFCEZPunU-g38yQ9iOIuN?usp=sharing).
+A [página demonstrativa](https://colab.research.google.com/drive/1FZ0Bifm4hx8WFCEZPunU-g38yQ9iOIuN?usp=sharing) das funcionalidades da plataforma já está disponível para acesso.
 
 ---
 <h1 align="center"> :construction: Construção :wrench: </h1>
 
-* [Google Colab](https://colab.research.google.com/) - Plataforma Google Colaboratory + IDE Jupyter Notebook;
-* [Pandas](https://pandas.pydata.org/) - Biblioteca Pandas;
-* [NumPy](https://numpy.org/) - Biblioteca NumPy;
-* [MatPlotLib](https://matplotlib.org/) - Biblioteca MatPlotLib;
-* [Python](https://www.python.org/) - Linguagem Python.
+
+* [Node](https://nodejs.org/en) - JavaScript runtime environment;
+* [React](https://react.dev/) - Web interface components library;
+* [Tailwind](https://tailwindcss.com/) - CSS framework;
+* [Open AI API](https://platform.openai.com/docs/api-reference/) - API acessing models by OpenAI motorbased structure;
+* [Google Colab](https://colab.research.google.com/) - Google Colaboratory + IDE Jupyter Notebook;
+* [Pandas](https://pandas.pydata.org/) - Pandas Library;
+* [NumPy](https://numpy.org/) - NumPy Library;
+* [MatPlotLib](https://matplotlib.org/) - MatPlotLib Library.
 
 ---
 <h1 align="center"> :busts_in_silhouette: Equipe :speech_balloon: </h1>
 
-* [Camilla Pedroza](https://www.linkedin.com/in/pedrozacamilla/)
-* [Danyele Fernandez](https://www.linkedin.com/in/danyele-fernandez/)
-* [Douglas Klem](https://www.linkedin.com/in/klemdoug/)
-* [Jaider Nunes](https://www.linkedin.com/in/jaidernunes/)
+* [Camilla Pedroza](https://www.linkedin.com/in/pedrozacamilla/) :rocket: :white_flower:
+* [Danyele Fernandez](https://www.linkedin.com/in/danyele-fernandez/) :rocket: :cat:
+* [Douglas Klem](https://www.linkedin.com/in/klemdoug/) :bar_chart: :space_invader:
+* [Jaider Nunes](https://www.linkedin.com/in/jaidernunes/) :eyeglasses: :on:
 
 ---
