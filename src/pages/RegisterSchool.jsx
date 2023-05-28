@@ -1,7 +1,9 @@
-import { useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import Input from "../components/Input";
+import AppContext from "../context/AppContext";
 
 export default function RegisterSchool() {
+  const { schools, setSchools } = useContext(AppContext)
   const [name, setName] = useState('')
   const [code, setCode] = useState('')
   const [board, setBoard] = useState('')
@@ -14,6 +16,54 @@ export default function RegisterSchool() {
   const [number, setNumber] = useState('')
   const [cep, setCep] = useState('')
   const [password, setPassword] = useState('')
+  const [isDisabled, setIsDisabled] = useState(true)
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    const school = {
+      name,
+      code,
+      board,
+      principal,
+      phone,
+      email,
+      state,
+      city,
+      address,
+      number,
+      cep,
+      password
+    }
+
+    const updatedSchools = [...schools, school];
+
+    localStorage.setItem('students', JSON.stringify(updatedSchools));
+    setSchools(updatedSchools);
+
+    console.log(updatedSchools);
+  }
+
+  const checkFields = () => {
+    if (name === '' ||
+      code === '' ||
+      board === '' ||
+      principal === '' ||
+      phone === '' ||
+      email === '' ||
+      state === '' ||
+      city === '' ||
+      address === '' ||
+      number === '' ||
+      cep === '' ||
+      password === '') {
+      return true
+    }
+    return false
+  }
+
+  useEffect(() => {
+    setIsDisabled(checkFields())
+  }, [name, code, board, principal, phone, email, state, city, address, number, cep, password])
 
   return (
     <div className="flex flex-col items-center justify-center h-screen">
@@ -152,7 +202,7 @@ export default function RegisterSchool() {
           id="inputPassword"
           label="Senha"
           classLabel="flex flex-col font-extrabold text-sm"
-          type="text"
+          type="password"
           value={password}
           inputName="inputPassword"
           onChange={({ target }) => setPassword(target.value)}
@@ -161,7 +211,9 @@ export default function RegisterSchool() {
         />
         <button
           type="submit"
-          className="bg-primary hover:bg-blue-700 text-secondary font-bold py-2 px-4 rounded-xl"
+          className="bg-primary hover:bg-blue-700 disabled:bg-gray text-secondary font-bold py-2 px-4 rounded-xl"
+          onClick={handleSubmit}
+          disabled={isDisabled}
         >
           Entrar
         </button>

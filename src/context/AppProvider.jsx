@@ -4,12 +4,19 @@ import PropTypes from 'prop-types';
 
 export default function AppProvider({ children }) {
   const [nameFilter, setNameFilter] = useState('');
+  const [students, setStudents] = useState([]);
+  const [schools, setSchools] = useState([]);
 
-  useEffect(() => { }, []);
+  useEffect(() => {
+    setStudents(JSON.parse(localStorage.getItem('students')) || []);
+    console.log(students);
+  }, []);
 
   const value = useMemo(() => ({
-    nameFilter, setNameFilter
-  }), [nameFilter]);
+    nameFilter, setNameFilter,
+    students, setStudents,
+    schools, setSchools,
+  }), [nameFilter, students, schools]);
 
   return (
     <AppContext.Provider value={value}>
