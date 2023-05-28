@@ -36,6 +36,8 @@ A [página demonstrativa](https://colab.research.google.com/drive/1FZ0Bifm4hx8WF
 * [NumPy](https://numpy.org/) - NumPy Library;
 * [MatPlotLib](https://matplotlib.org/) - MatPlotLib Library.
 
+*OBS.: a listagem das ferramentas de construção da plataforma foi baseado em uma preditiva inicial para execução e manutenção, podendo sofrer ajustes futuros de acordo com o desempenho de aplicação.*
+
 ---
 <h1 align="center"> :busts_in_silhouette: Equipe :speech_balloon: </h1>
 
