@@ -100,7 +100,7 @@ export default function RegisterSchool() {
         />
         <Input
           id="inputBoard"
-          label="Diretoria Regional ou DIRETORIA DE  EDUCAÇÃO???"
+          label="Diretoria Regional"
           classLabel="flex flex-col font-extrabold text-sm leading-6"
           type="text"
           value={board}
