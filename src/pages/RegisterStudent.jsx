@@ -1,11 +1,15 @@
 import { useContext, useState } from "react";
 import Input from "../components/Input";
-import upload from '../assets/upload.png'
 import AppContext from "../context/AppContext";
+import { useNavigate } from "react-router-dom";
+import { FaCloudUploadAlt } from 'react-icons/fa';
 
 export default function RegisterStudent() {
+  const navigateTo = useNavigate();
+
   const { students, setStudents } = useContext(AppContext);
   const [name, setName] = useState('')
+  const [cpf, setCpf] = useState('')
   const [email, setEmail] = useState('')
   const [birth, setBirth] = useState('')
   const [school, setSchool] = useState('')
@@ -33,6 +37,7 @@ export default function RegisterStudent() {
     setStudents(updatedStudents);
 
     console.log(updatedStudents);
+    navigateTo('/estudante/cursos')
   }
 
   return (
@@ -50,6 +55,17 @@ export default function RegisterStudent() {
           value={name}
           onChange={({ target }) => setName(target.value)}
           placeholder="Digite seu nome"
+          classInput="border border-gray font-normal text-sm leading-6 p-1.5 pl-3 rounded-xl"
+        />
+        <Input
+          label="CPF"
+          id="inputCpf"
+          inputName="inputCpf"
+          classLabel="flex flex-col font-extrabold text-sm leading-6"
+          type="text"
+          value={cpf}
+          onChange={({ target }) => setCpf(target.value)}
+          placeholder="Ex.: 000.000.000-00"
           classInput="border border-gray font-normal text-sm leading-6 p-1.5 pl-3 rounded-xl"
         />
         <Input
@@ -116,7 +132,7 @@ export default function RegisterStudent() {
               )}
               <span className="m-2">{proof}</span>
               <button className="bg-primary text-black rounded-r-[11px] h-[38px] w-[38px]">
-                <img className="m-auto w-1/3" src={upload} alt="upload icon" />
+                <FaCloudUploadAlt size={24} className="m-auto text-secondary" />
               </button>
             </div>
           </div>
@@ -158,7 +174,7 @@ export default function RegisterStudent() {
         />
         <button
           type="submit"
-          className="bg-primary hover:bg-blue-700 text-secondary font-extrabold py-2 px-4 rounded-xl"
+          className="bg-primary hover:bg-secondary hover:text-purpleLight text-secondary disabled:bg-gray font-extrabold py-2 px-4 rounded-xl"
           onClick={handleSubmit}
         >
           Entrar

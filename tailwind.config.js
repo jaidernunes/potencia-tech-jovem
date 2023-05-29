@@ -9,6 +9,8 @@ export default {
         secondaryLight: '#2B2D58',
         red: '#EA1D2C',
         gray: '#A4A3A3',
+        grayLight: '#F3F3F3',
+        purpleLight: '#CECCFF',
       },
       fontWeight: {
         thin: '100',
@@ -22,7 +24,7 @@ export default {
         extrabold: '800',
         'extra-bold': '800',
         black: '900',
-      }
+      },
     },
   },
   plugins: [],

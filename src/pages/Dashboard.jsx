@@ -3,6 +3,7 @@ import Header from "../components/Header";
 import AppContext from "../context/AppContext";
 import add from '../../public/add.png'
 import AddStudent from "../components/AddStudent";
+import studentsMock from '../utils/mocks'
 
 export default function Dashboard() {
   const { nameFilter, setNameFilter } = useContext(AppContext);
@@ -16,7 +17,7 @@ export default function Dashboard() {
   const handleCloseModal = () => {
     setIsOpen(false);
   };
-
+  console.log(studentsMock)
   return (
     <>
       <Header />
@@ -57,12 +58,33 @@ export default function Dashboard() {
               <th>Status</th>
             </tr>
           </thead>
-          <tbody>
+          <tbody className="text-sm font-medium">
+            {studentsMock.map((student) => (
+              <tr key={student.id} className="border-b border-gray ">
+                <td className="py-4 pl-6">
+                  <div className="flex flex-col">
+                    <span>
+                      {student.name}
+                    </span>
+                    <span className="text-gray font-normal">
+                      {student.email}
+                    </span>
+                  </div>
+                </td>
+                <td className="py-4 text-center">3° Ano</td>
+                <td className="py-4 text-center">
+                  <span className="rounded-xl bg-green-200 text-green-700 py-0.5 px-1.5">
+                    60%
+                  </span>
+                </td>
+                <td className="py-4 text-center">Ativo</td>
+              </tr>
+            ))}
 
           </tbody>
         </table>
       </div>
-      <div className="flex items-center justify-center h-screen">
+      <div className="flex items-center justify-center">
         <AddStudent isOpen={isOpen} onClose={handleCloseModal} />
       </div>
     </>

@@ -1,9 +1,12 @@
 import { useContext, useEffect, useState } from "react";
 import Input from "../components/Input";
 import AppContext from "../context/AppContext";
+import { useNavigate } from 'react-router-dom';
 
 export default function RegisterSchool() {
   const { schools, setSchools } = useContext(AppContext)
+  const navigateTo = useNavigate();
+
   const [name, setName] = useState('')
   const [code, setCode] = useState('')
   const [board, setBoard] = useState('')
@@ -17,6 +20,7 @@ export default function RegisterSchool() {
   const [cep, setCep] = useState('')
   const [password, setPassword] = useState('')
   const [isDisabled, setIsDisabled] = useState(true)
+
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -41,6 +45,7 @@ export default function RegisterSchool() {
     setSchools(updatedSchools);
 
     console.log(updatedSchools);
+    navigateTo('/escola/acompanhamento')
   }
 
   const checkFields = () => {
@@ -211,7 +216,7 @@ export default function RegisterSchool() {
         />
         <button
           type="submit"
-          className="bg-primary hover:bg-blue-700 disabled:bg-gray text-secondary font-bold py-2 px-4 rounded-xl"
+          className="bg-primary hover:bg-secondary hover:text-purpleLight disabled:bg-gray text-secondary font-bold py-2 px-4 rounded-xl"
           onClick={handleSubmit}
           disabled={isDisabled}
         >
