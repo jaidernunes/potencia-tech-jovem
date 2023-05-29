@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import Input from './Input';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import close from '../../public/close.png'
 import { useNavigate } from 'react-router-dom';
 
@@ -12,7 +12,6 @@ export default function Login({ isOpen, onClose }) {
 
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
-  const [isDisabled, setIsDisabled] = useState(true)
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -24,20 +23,6 @@ export default function Login({ isOpen, onClose }) {
 
     navigateTo('/estudante/cursos')
   }
-
-  const checkFields = () => {
-    if (email === '' ||
-      password === '') {
-      return true
-    }
-    return false
-  }
-
-  useEffect(() => {
-    setIsDisabled(checkFields())
-
-    onClose()
-  }, [email, password])
 
   return (
     <>
@@ -79,7 +64,7 @@ export default function Login({ isOpen, onClose }) {
               type="submit"
               className="bg-primary hover:bg-secondary hover:text-purpleLight text-secondary font-bold py-2 px-4 rounded-xl"
               onClick={handleSubmit}
-              disabled={isDisabled}
+              disabled={!email || !password}
             >
               Entrar
             </button>
